@@ -1,0 +1,68 @@
+import random
+choices = ["Rock", "Paper", "Scissors", "Water"]
+computer = random.choice(choices)
+player = False
+cpu_score = 0                       #Initial Score of the CPU
+player_score = 0                    #Initial Score of the Player
+
+while True:
+  player = input("Rock, Paper, Scissors or Water?:    ").capitalize()
+
+  #Implementing Conditions of the game
+  if player == computer:
+    print("Tie!")
+  elif player == "Rock":
+    if computer == "Paper":
+      print("You lose")
+      cpu_score += 1
+    else:
+      print("You Win!")
+      player_score += 1
+  elif player == "Paper":
+    if computer == "Scissors":
+      print("You lose")
+      cpu_score += 1
+    else:
+      print("You Win!")
+      player_score += 1
+  elif player == "Scissors":
+    if computer == "Rock":
+      print("You lose")
+      cpu_score += 1
+    else:
+      print("You Win!")
+      player_score += 1
+  elif player == "Water":
+    if computer == "Scissors":
+      print("You Win!")
+      player_score += 1
+  elif player == "Water":
+    if computer == "Rock":
+      print("You lose")
+      cpu_score += 1
+    else:
+      print("You Win!")
+      player_score += 1
+  elif player == "Water":
+    if computer == "Paper":
+      print("You Win!")
+      player_score += 1
+  elif player == "Scissors":
+    if computer == "Water":
+      print("You lose")
+    else:
+      print("You Win!")
+  elif player == "Paper":
+    if computer == "Water":
+      print("You lose")
+    else:
+      print("You Win!")
+  elif player == "Rock":
+    if computer == "Water":
+      print("You Win!")
+
+
+  elif player == "End":
+    print("Final Scores:   ")
+    print(f"CPU: {cpu_score}")
+    print(f"Player: {player_score}")
